@@ -1,6 +1,5 @@
 function Stroop(){};
 	Stroop.prototype.started=false;
-	Stroop.prototype.introId="";
 	Stroop.prototype.instructionId="";
 	Stroop.prototype.optionId="";
 	Stroop.prototype.name="";

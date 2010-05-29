@@ -34,24 +34,33 @@ oStr.colorAnswers = {
 };
 
 $(function() {
+	
 	var stroopBattery1 = new StroopBattery('Regular 1');
 	stroopBattery1.introId = 'regularIntro';
 	stroopBattery1.stroops.push(new NonMatchStroop());
 	stroopBattery1.stroops.push(new MatchStroop());
 	stroopBattery1.stroops.push(new NaturalStroop());
-
-	var stroopBattery2 = new StroopBattery('Regular 2');
-	stroopBattery2.introId = 'regularIntro';
-	stroopBattery2.stroops.push(new NonMatchStroop());
-	stroopBattery2.stroops.push(new MatchStroop());
-	stroopBattery2.stroops.push(new NaturalStroop());
+	
+	var stroopBattery2=new StroopBattery('Alike 1');
+	stroopBattery2.introId = 'alikeIntro';
+	stroopBattery2.stroops.push(new UnmatchStroopLike());
+	stroopBattery2.stroops.push(new MatchStroopLike());
+	
+	var stroopBattery3 = new StroopBattery('Regular 2');
+	stroopBattery3.introId = 'regularIntro';
+	stroopBattery3.stroops.push(new NonMatchStroop());
+	stroopBattery3.stroops.push(new MatchStroop());
+	stroopBattery3.stroops.push(new NaturalStroop());
 
 	stroopBattery1.onDone = function() {
 		stroopBattery2.start();
 	};
 	stroopBattery2.onDone = function() {
+		stroopBattery3.start();
+	};
+	stroopBattery3.onDone = function() {
 		$('body').empty().append(stroopBattery1.getResultDiv()).append(
-				stroopBattery2.getResultDiv());
+				stroopBattery2.getResultDiv()).append(stroopBattery3.getResultDiv());
 	};
 	stroopBattery1.start();
 
