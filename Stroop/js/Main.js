@@ -13,30 +13,45 @@
 	};
 })(jQuery);
 
-var questionToAsk=3;
-var eColors=['RED','BLUE','YELLOW','BLACK','GREEN','PINK'];
-var oStr={};
-oStr.colors={"RED":"אדום","BLUE":"כחול","YELLOW":"צהוב","BLACK":"שחור","GREEN":"ירוק","PINK":"ורוד"};
-oStr.colorAnswers={"RED":"T","BLUE":"F","YELLOW":"M","BLACK":"A","GREEN":"H","PINK":"U"};
+var questionToAsk = 3;
+var eColors = [ 'RED', 'BLUE', 'YELLOW', 'BLACK', 'GREEN', 'PINK' ];
+var oStr = {};
+oStr.colors = {
+	"RED" : "אדום",
+	"BLUE" : "כחול",
+	"YELLOW" : "צהוב",
+	"BLACK" : "שחור",
+	"GREEN" : "ירוק",
+	"PINK" : "ורוד"
+};
+oStr.colorAnswers = {
+	"RED" : "T",
+	"BLUE" : "F",
+	"YELLOW" : "M",
+	"BLACK" : "A",
+	"GREEN" : "H",
+	"PINK" : "U"
+};
 
 $(function() {
-	var stroopBattery1 = new StroopBattery();
+	var stroopBattery1 = new StroopBattery('Regular 1');
 	stroopBattery1.introId = 'regularIntro';
 	stroopBattery1.stroops.push(new NonMatchStroop());
 	stroopBattery1.stroops.push(new MatchStroop());
 	stroopBattery1.stroops.push(new NaturalStroop());
 
-	var stroopBattery2 = new StroopBattery();
+	var stroopBattery2 = new StroopBattery('Regular 2');
 	stroopBattery2.introId = 'regularIntro';
 	stroopBattery2.stroops.push(new NonMatchStroop());
 	stroopBattery2.stroops.push(new MatchStroop());
 	stroopBattery2.stroops.push(new NaturalStroop());
 
-	console.dir(stroopBattery1.stroops);
-	console.dir(stroopBattery2.stroops);
-
 	stroopBattery1.onDone = function() {
 		stroopBattery2.start();
+	};
+	stroopBattery2.onDone = function() {
+		$('body').empty().append(stroopBattery1.getResultDiv()).append(
+				stroopBattery2.getResultDiv());
 	};
 	stroopBattery1.start();
 

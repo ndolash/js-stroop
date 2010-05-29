@@ -56,14 +56,13 @@ function Stroop(){};
 		var that=this;
 		that.results=[];
 		var keyDownHandler=function(e){
-			console.log('keydown for '+that.getName());
 			// ignore irrelevant keys
 			if (e.which<58) return;
 			if (pressed) return;
-			console.log('good key');
+
 			var answer=that.checkAnswer(e.which);
 			that.results.push({"answer":answer,"responseTime":that.getResponseTime()});
-			console.log('answer '+answer);
+
 			that.questionAnswered++;
 			pressed=true;
 			var result=$("<div>"+that.questionAnswered+". Responded in "+that.getResponseTime()+"ms, with answer "+(answer?'correct':'incorrect')+'</div>');
@@ -72,9 +71,7 @@ function Stroop(){};
 			if (that.onAnswer) $.proxy(that.onAnswer,that)();
 		};
 		var keyUpHandler=function(e){
-			console.log('keyup handler');
 			if (!pressed) return;
-			console.log('pressed is true');
 			pressed=false;
 			that.showNextQuestion();
 		};
@@ -82,7 +79,6 @@ function Stroop(){};
 		that.keyDownHandler=$.proxy(keyDownHandler,that);
 		$('#instruction').empty().append($("#"+that.instructionId).clone());
 		$('#options').empty().append($("#"+that.optionId).clone());
-//		$('#options').html(that.str.options);
 		
 		$('body').keydown(that.keyDownHandler);
 		$(window).keydown(that.keyDownHandler);
@@ -96,7 +92,7 @@ function Stroop(){};
 		$(window).unbind('keydown',this.keyDownHandler);
 		$('body').unbind('keyup',this.keyUpHandler);
 		$(window).unbind('keyup',this.keyUpHandler);
-		// $('#word').html('&nbsp;');
+
 		this.started=false;
 	};
 	
