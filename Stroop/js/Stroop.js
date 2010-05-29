@@ -7,7 +7,6 @@ function Stroop(){};
 	Stroop.prototype.questionAnswered=0;
 	Stroop.prototype.questionTimestamp=0;
 	Stroop.prototype.resultTime=0;
-	//Stroop.prototype.str={instruction:"",options:""};
 	Stroop.prototype.results=[];
 	Stroop.prototype.getName=function(){return this.name; };
 	Stroop.prototype.getResults=function(){return this.results; };

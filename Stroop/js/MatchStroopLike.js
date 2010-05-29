@@ -2,7 +2,7 @@ function MatchStroopLike() {
 	var that = new Stroop();
 	that.introId='alikeIntro';
 	that.directions=['UP','DOWN','LEFT','RIGHT'];
-	that.directionsNames={'UP':'Up','DOWN':'Down','LEFT':'Left','RIGHT':'Right'};
+	that.directionsNames={'UP':'Up למעלה','DOWN':'Down למטה','LEFT':'Left שמאל','RIGHT':'Right ימין'};
 	that.directionsAnswer={'UP':'U','LEFT':'L','RIGHT':'R','DOWN':'D'};
 	that.optionId="alikeOption";
 	that.instructionId="alikeInstruction";
@@ -20,11 +20,11 @@ function MatchStroopLike() {
 			top=160;
 			break;
 		case 'LEFT':
-			left=-150;
+			left=-125;
 			top=80;
 			break;
 		case 'RIGHT':
-			left=150;
+			left=125;
 			top=80;
 		};
 		return {'left':left,'top':top};
@@ -55,7 +55,7 @@ function MatchStroopLike() {
 		
 		var left=0;
 		var top=0;
-		var wordEl=$('<span>'+that.directionsNames[direction]+'<span>').css('position','relative');
+		var wordEl=$('<span>'+that.directionsNames[direction]+'</span>').css('position','relative');
 		directonalSpan.append(wordEl);
 		var dirCord=that.getDirCords(direction);
 		wordEl.css({"top":dirCord.top,"left":dirCord.left});

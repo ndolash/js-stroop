@@ -1,10 +1,10 @@
 function UnmatchStroopLike() {
 	var that = new MatchStroopLike();
-	that.directions=['UP','DOWN','LEFT','RIGHT'];
-	that.directionsNames={'UP':'Up','DOWN':'Down','LEFT':'Left','RIGHT':'Right'};
-	that.directionsAnswer={'UP':'U','LEFT':'L','RIGHT':'R','DOWN':'D'};
-	that.optionId="alikeOption";
-	that.instructionId="alikeInstruction";
+//	that.directions=['UP','DOWN','LEFT','RIGHT'];
+//	that.directionsNames={'UP':'Up','DOWN':'Down','LEFT':'Left','RIGHT':'Right'};
+//	that.directionsAnswer={'UP':'U','LEFT':'L','RIGHT':'R','DOWN':'D'};
+//	that.optionId="alikeOption";
+//	that.instructionId="alikeInstruction";
 	
 	that.name = "Unmatch Stroop Alike";
 	that.getNextQuestion = function() {
