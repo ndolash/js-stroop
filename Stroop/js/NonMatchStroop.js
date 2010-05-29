@@ -3,13 +3,13 @@ function NonMatchStroop() {
 	that.name = "Non Match";
 	that.getNextQuestion = function() {
 		that.startTime();
-		var colorIdx = Math.round(Math.random() * (eColors.length - 1));
+		var colorIdx = Math.round(Math.random() * (that.colors.length - 1));
 		var colorIdx2;
 		do {
-			colorIdx2 = Math.round(Math.random() * (eColors.length - 1));
+			colorIdx2 = Math.round(Math.random() * (that.colors.length - 1));
 		} while (colorIdx2 == colorIdx);
-		color = eColors[colorIdx];
-		var textColor = eColors[colorIdx2];
+		color = that.colors[colorIdx];
+		var textColor = that.colors[colorIdx2];
 		that.color = color;
 		cssMap = {
 			"color" : color,
@@ -18,7 +18,7 @@ function NonMatchStroop() {
 			"font-weight" : "bold",
 			"font-family" : "arial"
 		};
-		return $('<div></div>').css(cssMap).html(oStr.colors[textColor]);
+		return $('<div></div>').css(cssMap).html(that.colorNames[textColor]);
 	};
 	return that;
 }
