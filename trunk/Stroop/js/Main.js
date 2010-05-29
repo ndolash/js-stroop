@@ -16,7 +16,8 @@
 var questionToAsk = 24;
 
 $(function() {
-
+	if (window.nochrome) return;
+		
 	var stroopBattery1 = new StroopBattery('Regular 1');
 	stroopBattery1.introId = 'regularIntro';
 	stroopBattery1.stroops.push(new NonMatchStroop());
