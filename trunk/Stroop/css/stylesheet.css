@@ -1,0 +1,48 @@
+@CHARSET "windows-1255";
+.colorDesc {
+	padding-left: 20px;
+	text-shadow: 1px 1px 1px BLACK;
+	font-weight: bold;
+	font-size: 24px;
+	font-family: arial;
+}
+
+.colorLetter {
+	color: black;
+	font-style: italic;
+}
+
+#word {
+	text-align: center
+}
+
+#output {
+	border: 1px solid black;
+	height: 200px;
+	overflow-y: scroll;
+	padding: 3px;
+}
+
+#panding {
+	color: white;
+	text-align: center;
+	font-size: 100px;
+	display: none;
+}
+
+#content {
+	display: none;
+}
+
+#instruction {
+	text-align: center;
+}
+
+#options {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+#instrcutionContainer {
+	display: none;
+}
