@@ -28,7 +28,7 @@ order to work properly.<br/>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
 	<script type="text/javascript">
-	CFInstall.check({mode: "overlay",onmissing:function(){window.nochrome=true;}});
+	CFInstall.check({mode: "overlay",onmissing:function(){window.nochrome=true;},oninstall:function(){window.nochrome=true;}});
 </script>
 
 <div id="stroopScreen">
@@ -100,7 +100,15 @@ order to work properly.<br/>
 	<span class="colorLetter">R</span>ight
 </span>
 </div>
+
+<div id="nochrome">
+יש להתקין את 
+Google Chrome Frame
+בשביל להריץ את הניסוי. לאחר ההתקנה יש להפעיל מחדש את הדפדפן.
 </div>
+</div>
+
+
 
 </body>
 </html>
