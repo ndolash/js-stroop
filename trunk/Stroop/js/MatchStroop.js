@@ -1,6 +1,6 @@
 function MatchStroop() {
 	var that = new Stroop();
-	that.name = "Match";
+	that.name = "Match Stroop";
 	that.color = null;
 	that.getNextQuestion = function() {
 		that.startTime();
