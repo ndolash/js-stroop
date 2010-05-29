@@ -34,11 +34,15 @@ table td {
 	-moz-border-radius: 0px 0px 0px 0px;
 }
 .colorDesc {
-	padding-left: 20px;
+	padding-right: 20px;
 	text-shadow: 1px 1px 1px BLACK;
 	font-weight: bold;
 	font-size: 24px;
 	font-family: arial;
+}
+
+.directionDesc {
+	color: gray;
 }
 
 .colorLetter {
