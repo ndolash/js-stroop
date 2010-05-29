@@ -23,12 +23,19 @@
 <body>
 
 <noscript>This application should have JavaScript enable in
-order to work properly.<br/>
+order to work properly.<br />
 ג'אווה סקריפט צריכה להיות מופעלת כדי להריץ את האפליקציה</noscript>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
-	<script type="text/javascript">
-	CFInstall.check({mode: "overlay",onmissing:function(){window.nochrome=true;},oninstall:function(){window.nochrome=true;}});
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<script type="text/javascript">
+	CFInstall.check( {
+		mode : "overlay",
+		onmissing : function() {
+			window.nochrome = true;
+		}
+	
+	});
 </script>
 
 <div id="stroopScreen">
@@ -48,9 +55,8 @@ order to work properly.<br/>
 
 <div id="instrcutionContainer">
 
-<div id="submitInstruction">
-	אנא שלח את התוצאות הבאות במייל לאנסטסיה או לרביד:
-</div>
+<div id="submitInstruction">אנא שלח את התוצאות הבאות במייל
+לאנסטסיה או לרביד:</div>
 
 <div id="regularIntro" class="intro">
 <h1>מטלה</h1>
@@ -62,9 +68,8 @@ order to work properly.<br/>
 
 <div id="alikeIntro" class="intro">
 <h1>מטלה</h1>
-<p>
-במסך הבא תראו מילים אשר נמצאות בכיוון מסויים. המטרה היא להקיש את האות הראשונה של המיקום של המילה על המסך
-</p>
+<p>במסך הבא תראו מילים אשר נמצאות בכיוון מסויים. המטרה היא להקיש את
+האות הראשונה של המיקום של המילה על המסך</p>
 <h2>כאשר את\ה מוכנים ENTER הקש</h2>
 </div>
 
@@ -82,30 +87,17 @@ order to work properly.<br/>
 	style="color: red">דום</span></span></div>
 
 
-<div id="alikeInstruction">
-<span>אנא הקש\י את האות המתאימה עבור הכיוון בו המילה נמצאת</span></div>
-<div id="alikeOption">
-<span class="colorDesc directionDesc">
-	<span class="colorLetter">U</span>p
-</span>
-<span class="colorDesc directionDesc">
-	<span class="colorLetter">D</span>own
-</span>
+<div id="alikeInstruction"><span>אנא הקש\י את האות המתאימה
+עבור הכיוון בו המילה נמצאת</span></div>
+<div id="alikeOption"><span class="colorDesc directionDesc">
+<span class="colorLetter">U</span>p </span> <span
+	class="colorDesc directionDesc"> <span class="colorLetter">D</span>own
+</span> <span class="colorDesc directionDesc"> <span class="colorLetter">L</span>eft
+</span> <span class="colorDesc directionDesc"> <span class="colorLetter">R</span>ight
+</span></div>
 
-<span class="colorDesc directionDesc">
-	<span class="colorLetter">L</span>eft
-</span>
-
-<span class="colorDesc directionDesc">
-	<span class="colorLetter">R</span>ight
-</span>
-</div>
-
-<div id="nochrome">
-יש להתקין את 
-Google Chrome Frame
-בשביל להריץ את הניסוי. לאחר ההתקנה יש להפעיל מחדש את הדפדפן.
-</div>
+<div id="nochrome">יש להתקין את Google Chrome Frame בשביל להריץ את
+הניסוי. לאחר ההתקנה יש להפעיל מחדש את הדפדפן.</div>
 </div>
 
 
