@@ -13,13 +13,13 @@
 	};
 })(jQuery);
 
+var questionToAsk=3;
 var eColors=['RED','BLUE','YELLOW','BLACK','GREEN','PINK'];
 var oStr={};
 oStr.colors={"RED":"אדום","BLUE":"כחול","YELLOW":"צהוב","BLACK":"שחור","GREEN":"ירוק","PINK":"ורוד"};
 oStr.colorAnswers={"RED":"T","BLUE":"F","YELLOW":"M","BLACK":"A","GREEN":"H","PINK":"U"};
 
 $(function() {
-	alert('start');
 	var stroopBattery1 = new StroopBattery();
 	stroopBattery1.introId = 'regularIntro';
 	stroopBattery1.stroops.push(new NonMatchStroop());
