@@ -57,7 +57,6 @@ StroopBattery.prototype.run = function() {
 
 					if (that.onDone)
 						that.onDone();
-					//console.dir(that.getResults());
 				}
 			}
 		};
@@ -71,11 +70,17 @@ StroopBattery.prototype.getResultDiv=function(){
 	div.append($('<h1>'+this.getName()+"</h1>"));
 	$.each(this.getResults(),function(i,result){
 		div.append($('<h2>'+result.name+'</h2>'));
-		var table=$('<table></table>');
-		table.append($('<tr><td>Currect</td><td>Time</td></tr>'));
+		var table=$('<table border="1"></table>');
+		table.append($('<tr style="font-weight:bold; background:gray"><td></td><td>Currect</td><td>Time</td></tr>'));
+		var answers=0, timing=0, count=0;
 		$.each(result.results,function(i,answer){
-			table.append('<tr><td>'+answer.answer+'</td><td>'+answer.responseTime+'</td></tr>');
+			table.append('<tr><td>'+(i+1)+'</td><td>'+answer.answer+'</td><td>'+answer.responseTime+'</td></tr>');
+			if (answer.answer) answers++;
+			timing +=answer.responseTime;
+			count++;
 		});
+		var avr=Math.round(timing/count);
+		table.append('<tr style="font-weight:bold"><td></td><td>'+answers+'</td><td>'+avr+'</td></tr>');
 		div.append(table);
 	});
 	return div;
