@@ -80,3 +80,7 @@ table td {
 #instrcutionContainer {
 	display: none;
 }
+
+#output {
+	display:none;
+}
