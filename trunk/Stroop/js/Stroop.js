@@ -1,11 +1,13 @@
 function Stroop(){};
 	Stroop.prototype.started=false;
-	Stroop.prototype.introId="naturalIntro";
+	Stroop.prototype.introId="";
+	Stroop.prototype.instructionId="";
+	Stroop.prototype.optionId="";
 	Stroop.prototype.name="";
 	Stroop.prototype.questionAnswered=0;
 	Stroop.prototype.questionTimestamp=0;
 	Stroop.prototype.resultTime=0;
-	Stroop.prototype.str={instruction:"",options:""};
+	//Stroop.prototype.str={instruction:"",options:""};
 	Stroop.prototype.results=[];
 	Stroop.prototype.getName=function(){return this.name; };
 	Stroop.prototype.getResults=function(){return this.results; };
@@ -58,8 +60,10 @@ function Stroop(){};
 			// ignore irrelevant keys
 			if (e.which<58) return;
 			if (pressed) return;
+			console.log('good key');
 			var answer=that.checkAnswer(e.which);
 			that.results.push({"answer":answer,"responseTime":that.getResponseTime()});
+			console.log('answer '+answer);
 			that.questionAnswered++;
 			pressed=true;
 			var result=$("<div>"+that.questionAnswered+". Responded in "+that.getResponseTime()+"ms, with answer "+(answer?'correct':'incorrect')+'</div>');
@@ -68,14 +72,17 @@ function Stroop(){};
 			if (that.onAnswer) $.proxy(that.onAnswer,that)();
 		};
 		var keyUpHandler=function(e){
+			console.log('keyup handler');
 			if (!pressed) return;
+			console.log('pressed is true');
 			pressed=false;
 			that.showNextQuestion();
 		};
-		that.keyUpHandler=$.proxy(keyDownHandler,that);
-		that.keyDownHandler=$.proxy(keyUpHandler,that);
-		$('#instruction').html(that.str.instruction);
-		$('#options').html(that.str.options);
+		that.keyUpHandler=$.proxy(keyUpHandler,that);
+		that.keyDownHandler=$.proxy(keyDownHandler,that);
+		$('#instruction').empty().append($("#"+that.instructionId).clone());
+		$('#options').empty().append($("#"+that.optionId).clone());
+//		$('#options').html(that.str.options);
 		
 		$('body').keydown(that.keyDownHandler);
 		$(window).keydown(that.keyDownHandler);
@@ -92,3 +99,4 @@ function Stroop(){};
 		// $('#word').html('&nbsp;');
 		this.started=false;
 	};
+	

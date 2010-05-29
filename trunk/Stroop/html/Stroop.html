@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <title>STROOP</title>
 
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/Stroop.js"></script>
 <script type="text/javascript" src="../js/MatchStroop.js"></script>
 <script type="text/javascript" src="../js/NonMatchStroop.js"></script>
@@ -14,7 +13,7 @@
 <script type="text/javascript" src="../js/StroopBattery.js"></script>
 
 <script type="text/javascript" src="../js/Main.js"></script>
-<link rel="stylesheet" href="../js/stylesheet.css" type="text/css"
+<link rel="stylesheet" href="../css/stylesheet.css" type="text/css"
 	media="screen" />
 </head>
 <body>
@@ -22,26 +21,16 @@
 <noscript>This application should have JavaScript enable in
 order to work properly.</br>
 ג'אווה סקריפט צריכה להיות מופעלת כדי להריץ את האפליקציה</noscript>
-<!--
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
-	<script type="text/javascript">
-	CFInstall.check({mode: "inline"});
-</script>-->
+
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>-->
+<!--	<script type="text/javascript">-->
+<!--	CFInstall.check({mode: "inline"});-->
+<!--</script>-->
+
 <div id="stroopScreen">
 <div id="content">
-<div id="instruction">אנא הקש\י את האות המתאימה עבור הצבע שאתה
-רואה</div>
-
-<div id="options"><span class="colorDesc"><span
-	class="colorLetter">י</span><span style="color: green">רוק</span></span> <span
-	class="colorDesc"><span class="colorLetter">צ</span><span
-	style="color: yellow">הוב</span></span> <span class="colorDesc"><span
-	class="colorLetter">ו</span><span style="color: pink">רוד</span></span> <span
-	class="colorDesc"><span class="colorLetter">כ</span><span
-	style="color: blue">חול</span></span> <span class="colorDesc"><span
-	class="colorLetter">ש</span><span style="color: black">חור</span></span> <span
-	class="colorDesc"><span class="colorLetter">א</span><span
-	style="color: red">דום</span></span></div>
+<div id="instruction"></div>
+<div id="options"></div>
 
 <div id="word" class="word"></div>
 <div id="output"></div>
@@ -53,7 +42,27 @@ order to work properly.</br>
 <div id="introScreen"></div>
 
 <div id="instrcutionContainer">
-<div id="regularIntro">תעשה משהו</div>
+
+<div id="regularIntro">
+<h1>מטלה</h1>
+<p>במסך הבא תראו מילים או צורות בצבעים שונים. המטרה היא להקיש את
+האות הראשונה שבה המילה או הצורה צבועים בו</p>
+<h2>כאשר את\ה מוכנים ENTER הקש</h2>
 </div>
+
+<div id="regularInstruction"><span>אנא הקש\י את האות
+המתאימה עבור הצבע שאתה רואה</span></div>
+<div id="regularOption"><span class="colorDesc"> <span
+	class="colorLetter">צ</span><span style="color: yellow">הוב</span></span> <span
+	class="colorDesc"><span class="colorLetter">י</span><span
+	style="color: green">רוק</span></span> <span class="colorDesc"><span
+	class="colorLetter">ו</span><span style="color: pink">רוד</span></span> <span
+	class="colorDesc"><span class="colorLetter">כ</span><span
+	style="color: blue">חול</span></span> <span class="colorDesc"><span
+	class="colorLetter">ש</span><span style="color: black">חור</span></span> <span
+	class="colorDesc"><span class="colorLetter">א</span><span
+	style="color: red">דום</span></span></div>
+</div>
+
 </body>
 </html>

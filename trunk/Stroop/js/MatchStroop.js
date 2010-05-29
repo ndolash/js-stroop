@@ -20,12 +20,14 @@ function MatchStroop() {
 		that.stopTime();
 		return answer == oStr.colorAnswers[that.color].charCodeAt(0);
 	};
-	that.str.instruction = "אנא הקש\י את האות המתאימה עבור הצבע שאתה רואה";
-	that.str.options = '<span class="colorDesc"><span class="colorLetter">צ</span><span style="color:yellow">הוב</span></span>'
-			+ '<span class="colorDesc"><span class="colorLetter">י</span><span style="color:green">רוק</span></span>'
-			+ '<span class="colorDesc"><span class="colorLetter">ו</span><span style="color:pink">רוד</span></span>'
-			+ '<span class="colorDesc"><span class="colorLetter">כ</span><span style="color:blue">חול</span></span>'
-			+ '<span class="colorDesc"><span class="colorLetter">ש</span><span style="color:black">חור</span></span>'
-			+ '<span class="colorDesc"><span class="colorLetter">א</span><span style="color:red">דום</span></span>';
+	that.optionId="regularOption";
+	that.instructionId="regularInstruction";
+//	that.str.instruction = "אנא הקש\י את האות המתאימה עבור הצבע שאתה רואה";
+//	that.str.options = '<span class="colorDesc"><span class="colorLetter">צ</span><span style="color:yellow">הוב</span></span>'
+//			+ '<span class="colorDesc"><span class="colorLetter">י</span><span style="color:green">רוק</span></span>'
+//			+ '<span class="colorDesc"><span class="colorLetter">ו</span><span style="color:pink">רוד</span></span>'
+//			+ '<span class="colorDesc"><span class="colorLetter">כ</span><span style="color:blue">חול</span></span>'
+//			+ '<span class="colorDesc"><span class="colorLetter">ש</span><span style="color:black">חור</span></span>'
+//			+ '<span class="colorDesc"><span class="colorLetter">א</span><span style="color:red">דום</span></span>';
 	return that;
 };
