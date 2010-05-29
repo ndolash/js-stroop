@@ -15,25 +15,26 @@ StroopBattery.prototype.getResults = function() {
 StroopBattery.prototype.getName = function() { return this.name; };
 
 StroopBattery.prototype.start = function() {
-	var introTextId = this.introId;
-	$('#stroopScreen').hide();
-	$('#introScreen').empty().append($('#' + introTextId).clone().show())
-			.show();
-	var that = this;
-	var bindEvent = 'keyup';
-	var keyUpHandler = function(e) {
-		if (e.keyCode != 13)
-			return;
-		e.stopImmediatePropagation();
-		e.stopPropagation();
-		e.preventDefault();
-		$('body').unbind(bindEvent, that.keyUpHandler);
-		$(window).unbind(bindEvent, that.keyUpHandler);
-		that.run();
-	};
-	that.keyUpHandler = $.proxy(keyUpHandler, that);
-	$('body').bind(bindEvent, that.keyUpHandler);
-	$(window).bind(bindEvent, that.keyUpHandler);
+//	var introTextId = this.introId;
+//	$('#stroopScreen').hide();
+//	$('#introScreen').empty().append($('#' + introTextId).clone().show())
+//			.show();
+//	var that = this;
+//	var bindEvent = 'keyup';
+//	var keyUpHandler = function(e) {
+//		if (e.keyCode != 13)
+//			return;
+//		e.stopImmediatePropagation();
+//		e.stopPropagation();
+//		e.preventDefault();
+//		$('body').unbind(bindEvent, that.keyUpHandler);
+//		$(window).unbind(bindEvent, that.keyUpHandler);
+//		that.run();
+//	};
+//	that.keyUpHandler = $.proxy(keyUpHandler, that);
+//	$('body').bind(bindEvent, that.keyUpHandler);
+//	$(window).bind(bindEvent, that.keyUpHandler);
+	this.run();
 };
 
 StroopBattery.prototype.run = function() {
