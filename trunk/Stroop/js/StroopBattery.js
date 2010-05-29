@@ -12,7 +12,7 @@ StroopBattery.prototype.onDone = function() {
 StroopBattery.prototype.getResults = function() {
 	return this.results;
 };
-StroopBattery.prototype.getName = function() { return this.name; }
+StroopBattery.prototype.getName = function() { return this.name; };
 
 StroopBattery.prototype.start = function() {
 	var introTextId = this.introId;

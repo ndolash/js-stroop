@@ -3,8 +3,8 @@ function NaturalStroop() {
 	that.name = "Natural";
 	that.getNextQuestion = function() {
 		that.startTime();
-		var colorIdx = Math.round(Math.random() * (eColors.length - 1));
-		var color = eColors[colorIdx];
+		var colorIdx = Math.round(Math.random() * (that.colors.length - 1));
+		var color = that.colors[colorIdx];
 		that.color = color;
 		var cssMap = {
 			"color" : color,
