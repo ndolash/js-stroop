@@ -1,5 +1,6 @@
 function MatchStroopLike() {
 	var that = new Stroop();
+	that.introId='alikeIntro';
 	that.directions=['UP','DOWN','LEFT','RIGHT'];
 	that.directionsNames={'UP':'Up','DOWN':'Down','LEFT':'Left','RIGHT':'Right'};
 	that.directionsAnswer={'UP':'U','LEFT':'L','RIGHT':'R','DOWN':'D'};

@@ -3,6 +3,7 @@ function Stroop(){};
 	Stroop.prototype.instructionId="";
 	Stroop.prototype.optionId="";
 	Stroop.prototype.name="";
+	Stroop.prototype.introId="";
 	Stroop.prototype.questionAnswered=0;
 	Stroop.prototype.questionTimestamp=0;
 	Stroop.prototype.resultTime=0;
@@ -48,6 +49,32 @@ function Stroop(){};
 	};
 	Stroop.prototype.start=function(){
 		if (this.started) return;
+		this.started=true;
+		var introTextId = this.introId;
+		$('#stroopScreen').hide();
+		$('#introScreen').empty().append($('#' + introTextId).clone().show())
+				.show();
+		var that = this;
+		var bindEvent = 'keyup';
+		var keyUpHandler = function(e) {
+			if (e.keyCode != 13)
+				return;
+			e.stopImmediatePropagation();
+			e.stopPropagation();
+			e.preventDefault();
+			$('body').unbind(bindEvent, that.keyUpHandler);
+			$(window).unbind(bindEvent, that.keyUpHandler);
+			$('#introScreen').hide();
+			$('#content').show();
+			$('#stroopScreen').show();
+			that.run();
+		};
+		that.keyUpHandler = $.proxy(keyUpHandler, that);
+		$('body').bind(bindEvent, that.keyUpHandler);
+		$(window).bind(bindEvent, that.keyUpHandler);
+	};
+	
+	Stroop.prototype.run=function(){
 		$('#output').append($('<div>Starting '+this.getName()+'</div>')).scrollTop(50000);
 		$('#word').show();
 		this.started=true;

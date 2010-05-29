@@ -1,6 +1,7 @@
 function NaturalStroop() {
 	var that = new MatchStroop();
 	that.name = "Natural";
+	that.introId='neutralIntro';
 	that.getNextQuestion = function() {
 		that.startTime();
 		var colorIdx = Math.round(Math.random() * (that.colors.length - 1));

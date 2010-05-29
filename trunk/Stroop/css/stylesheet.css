@@ -8,6 +8,8 @@
 
 .intro {
 	text-align: center;
+	font-size:20px;
+	direction: rtl;
 }
 table {
 	border-width: 1px;

@@ -1,6 +1,6 @@
 function MatchStroop() {
 	var that = new Stroop();
-
+	that.introId='regularIntro';
 	that.colors = [ 'RED', 'BLUE', 'YELLOW', 'BLACK', 'GREEN', 'PINK' ];
 	that.colorNames = {
 		"RED" : "аген",
