@@ -14,24 +14,6 @@
 })(jQuery);
 
 var questionToAsk = 3;
-// var eColors = [ 'RED', 'BLUE', 'YELLOW', 'BLACK', 'GREEN', 'PINK' ];
-// var oStr = {};
-// oStr.colors = {
-// "RED" : "אדום",
-// "BLUE" : "כחול",
-// "YELLOW" : "צהוב",
-// "BLACK" : "שחור",
-// "GREEN" : "ירוק",
-// "PINK" : "ורוד"
-// };
-// oStr.colorAnswers = {
-// "RED" : "T",
-// "BLUE" : "F",
-// "YELLOW" : "M",
-// "BLACK" : "A",
-// "GREEN" : "H",
-// "PINK" : "U"
-// };
 
 $(function() {
 
@@ -67,10 +49,12 @@ $(function() {
 		stroopBattery4.start();
 	};
 	stroopBattery4.onDone = function() {
-		$('body').empty().append(stroopBattery1.getResultDiv()).append(
-				stroopBattery2.getResultDiv()).append(
-				stroopBattery3.getResultDiv()).append(
-				stroopBattery4.getResultDiv());
+		var resultEl = $('#submitInstruction').clone();
+		$('body').empty().append(resultEl)
+				.append(stroopBattery1.getResultDiv()).append(
+						stroopBattery2.getResultDiv()).append(
+						stroopBattery3.getResultDiv()).append(
+						stroopBattery4.getResultDiv());
 	};
 	stroopBattery1.start();
 
