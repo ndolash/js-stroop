@@ -1,0 +1,186 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type"
+	CONTENT="text/html; charset=windows-1255">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>STROOP</title>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/Stroop.js"></script>
+<script type="text/javascript" src="../js/MatchStroop.js"></script>
+<script type="text/javascript" src="../js/NonMatchStroop.js"></script>
+<script type="text/javascript" src="../js/NaturalStroop.js"></script>
+<script type="text/javascript" src="../js/StroopBattery.js"></script>
+<script type="text/javascript" src="../js/MatchStroopLike.js"></script>
+<script type="text/javascript" src="../js/UnmatchStroopLike.js"></script>
+<script type="text/javascript" src="../js/EmotionalNeutralStroop.js"></script>
+<script type="text/javascript" src="../js/EmotionalNonneutralStroop.js"></script>
+
+<script type="text/javascript" src="../js/Main.js"></script>
+<link rel="stylesheet" href="../css/stylesheet.css" type="text/css"
+	media="screen" />
+</head>
+<body>
+
+<noscript>This application should have JavaScript enable in
+order to work properly.<br />
+ג'אווה סקריפט צריכה להיות מופעלת כדי להריץ את האפליקציה</noscript>
+
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<script type="text/javascript">
+	CFInstall.check( {
+		mode : "overlay",
+		onmissing : function() {
+			window.nochrome = true;
+		},
+		oninstall:function(){
+			window.nochrome = true;
+		},
+		destination:"ChromeFramePrompt.html"
+	
+	});
+</script>
+
+<div id="stroopScreen">
+<div id="content">
+<div id="instruction"></div>
+<div id="options"></div>
+
+<div id="word" class="word"></div>
+<div id="output"></div>
+</div>
+
+<div id="panding">ממתין שתחזור...</div>
+</div>
+
+<div id="introScreen"></div>
+
+
+<div id="instrcutionContainer">
+
+<div id="submitInstruction" style="text-align:center">
+<h1>
+אנא שלח את התוצאות הבאות במייל
+לאנסטסיה או לרביד:
+</h1>
+</div>
+
+<div id="regularIntro" class="intro">
+<h1>מטלה</h1>
+במסך הבא יפיעו מילים הכתובות בצבעים שנים. 
+הצבעים שיופיעו הם:
+<div id="regularOption"><span class="colorDesc"> <span
+	class="colorLetter">צ</span><span style="color: yellow">הוב</span></span> <span
+	class="colorDesc"><span class="colorLetter">י</span><span
+	style="color: green">רוק</span></span> <span class="colorDesc"><span
+	class="colorLetter">ו</span><span style="color: pink">רוד</span></span> <span
+	class="colorDesc"><span class="colorLetter">כ</span><span
+	style="color: blue">חול</span></span> <span class="colorDesc"><span
+	class="colorLetter">ש</span><span style="color: black">חור</span></span> <span
+	class="colorDesc"><span class="colorLetter">א</span><span
+	style="color: red">דום</span></span></div>
+הקישו את האות הראשונה (צ, י, ו, כ, ש, א) של 
+<u><b>הצבע בו כתובה המילה</b></u>.
+<h3>
+נא לא להפסיק את המטלה באמצע.
+</h3>
+<h2>
+הקישו ENTER כאשר אתם מוכנים
+</h2>
+<span class="credits">אנסט&zwj;סיה גור ורב&zwj;יד גרבר
+<br/>
+בוצע על ידי <a href="http://blog.yonatan.me" target="_blank">יונתן גרבר</a> 
+</span>
+</div>
+
+
+<div id="alikeIntro" class="intro">
+<h1>מטלה</h1>
+במסך הבא יופיעו מילים במיקומים שונים על המסך.
+המיקומים שיופיעו הם:
+<div>
+<span class="colorDesc directionDesc">
+<span class="colorLetter">U</span>p - למעלה</span> <span
+	class="colorDesc directionDesc"> <span class="colorLetter">D</span>own - למטה
+</span> <span class="colorDesc directionDesc"> <span class="colorLetter">L</span>eft - שמאלה
+</span> <span class="colorDesc directionDesc"> <span class="colorLetter">R</span>ight - ימינה
+</span>
+</div>
+הקישו את האות הראשונה (R, L, D, U) של 
+<u><b>המיקום בו מופיעה המילה</b></u>.
+<h3>
+נא לא להפסיק את המטלה באמצע.
+</h3>
+<h2>
+הקישו ENTER כאשר אתם מוכנים
+</h2>
+
+<span class="credits">אנסט&zwj;סיה גור ורב&zwj;יד גרבר
+<br/>
+בוצע על ידי <a href="http://blog.yonatan.me" target="_blank">יונתן גרבר</a> 
+</span>
+
+</div>
+
+<div id="neutralIntro" class="intro">
+<h1>מטלה</h1>
+במסך הבא יפיעו כתמי צבע בצבעים שנים. 
+הצבעים שיופיעו הם:
+<div><span class="colorDesc"> <span
+	class="colorLetter">צ</span><span style="color: yellow">הוב</span></span> <span
+	class="colorDesc"><span class="colorLetter">י</span><span
+	style="color: green">רוק</span></span> <span class="colorDesc"><span
+	class="colorLetter">ו</span><span style="color: pink">רוד</span></span> <span
+	class="colorDesc"><span class="colorLetter">כ</span><span
+	style="color: blue">חול</span></span> <span class="colorDesc"><span
+	class="colorLetter">ש</span><span style="color: black">חור</span></span> <span
+	class="colorDesc"><span class="colorLetter">א</span><span
+	style="color: red">דום</span></span></div>
+הקישו את האות הראשונה (צ, י, ו, כ, ש, א) של 
+<u><b>צבע הכתם</b></u>.
+<h3>
+נא לא להפסיק את המטלה באמצע.
+</h3>
+<h2>
+הקישו ENTER כאשר אתם מוכנים
+</h2>
+
+<span class="credits">אנסט&zwj;סיה גור ורב&zwj;יד גרבר
+<br/>
+בוצע על ידי <a href="http://blog.yonatan.me" target="_blank">יונתן גרבר</a> 
+</span>
+
+</div>
+
+<div id="regularInstruction" class="intro"><span>אנא הקש\י את האות
+המתאימה עבור הצבע שאתה רואה</span></div>
+<div><span class="colorDesc"> <span
+	class="colorLetter">צ</span><span style="color: yellow">הוב</span></span> <span
+	class="colorDesc"><span class="colorLetter">י</span><span
+	style="color: green">רוק</span></span> <span class="colorDesc"><span
+	class="colorLetter">ו</span><span style="color: pink">רוד</span></span> <span
+	class="colorDesc"><span class="colorLetter">כ</span><span
+	style="color: blue">חול</span></span> <span class="colorDesc"><span
+	class="colorLetter">ש</span><span style="color: black">חור</span></span> <span
+	class="colorDesc"><span class="colorLetter">א</span><span
+	style="color: red">דום</span></span></div>
+
+
+<div id="alikeInstruction" class="intro"><span>אנא הקש\י את האות המתאימה
+עבור הכיוון בו המילה נמצאת</span></div>
+<div id="alikeOption"><span class="colorDesc directionDesc">
+<span class="colorLetter">U</span>p - למעלה</span> <span
+	class="colorDesc directionDesc"> <span class="colorLetter">D</span>own - למטה
+</span> <span class="colorDesc directionDesc"> <span class="colorLetter">L</span>eft - שמאלה
+</span> <span class="colorDesc directionDesc"> <span class="colorLetter">R</span>ight - ימינה
+</span></div>
+
+
+</div>
+
+<div id="nochromeDiv">יש להתקין את Google Chrome Frame בשביל להריץ את
+הניסוי. לאחר ההתקנה יש להפעיל מחדש את הדפדפן.</div>
+
+</body>
+</html>
