@@ -13,7 +13,8 @@
 	};
 })(jQuery);
 
-var questionToAsk = 24;
+var questionToAsk = 0;
+nochrome=true;
 
 $(function() {
 	if (window.nochrome) {
