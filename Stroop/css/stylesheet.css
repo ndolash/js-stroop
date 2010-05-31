@@ -1,16 +1,32 @@
 @CHARSET "windows-1255";
 
-.ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
-.ui-helper-clearfix { display: inline-block; }
+.ui-helper-clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.ui-helper-clearfix {
+	display: inline-block;
+}
+
 /* required comment for clearfix to work in Opera \*/
-* html .ui-helper-clearfix { height:1%; }
-.ui-helper-clearfix { display:block; }
+* html .ui-helper-clearfix {
+	height: 1%;
+}
+
+.ui-helper-clearfix {
+	display: block;
+}
 
 .intro {
 	text-align: center;
-	font-size:20px;
+	font-size: 20px;
 	direction: rtl;
 }
+
 table {
 	border-width: 1px;
 	border-spacing: 0px;
@@ -19,6 +35,7 @@ table {
 	border-collapse: collapse;
 	background-color: white;
 }
+
 table th {
 	border-width: 1px;
 	padding: 2px;
@@ -27,6 +44,7 @@ table th {
 	background-color: white;
 	-moz-border-radius: 0px 0px 0px 0px;
 }
+
 table td {
 	border-width: 1px;
 	padding: 2px;
@@ -35,12 +53,22 @@ table td {
 	background-color: white;
 	-moz-border-radius: 0px 0px 0px 0px;
 }
+
 .colorDesc {
 	padding-right: 20px;
 	text-shadow: 1px 1px 1px BLACK;
 	font-weight: bold;
 	font-size: 24px;
 	font-family: arial;
+}
+
+.credits {
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 5px;
+	font-size: 15px;
+	text-align: left;
 }
 
 .directionDesc {
@@ -88,9 +116,9 @@ table td {
 }
 
 #output {
-	display:none;
+	display: none;
 }
 
 #nochromeDiv {
-	display:none;
+	display: none;
 }
