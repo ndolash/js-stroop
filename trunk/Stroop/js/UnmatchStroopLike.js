@@ -29,19 +29,21 @@ function UnmatchStroopLike() {
 		var direction = that.directions[dirIdx];
 		that.direction=direction;
 		
-		var wordEl=$('<span>'+that.directionsNames[direction]+'<span>').css('position','relative');
-		directonalSpan.append(wordEl);
+		
 		
 		var otherDirection;
 		do {
 			var dirIdx = Math.round(Math.random() * (that.directions.length - 1));
 			otherDirection = that.directions[dirIdx];
 		} while (otherDirection==direction);
-		var dirCord=that.getDirCords(otherDirection);
+		var dirCord=that.getDirCords(direction);
+		var wordEl=$('<span>'+that.directionsNames[otherDirection]+'<span>').css('position','relative');
+		directonalSpan.append(wordEl);
+		
 		wordEl.css({"top":dirCord.top,"left":dirCord.left});
 		return $('<div></div>').append(directonalSpan);
 		
 	};
-	
+		
 	return that;
 }
