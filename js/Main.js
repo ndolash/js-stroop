@@ -14,7 +14,6 @@
 })(jQuery);
 
 var questionToAsk = 24;
-nochrome=true;
 
 $(function() {
 	if (window.nochrome) {
